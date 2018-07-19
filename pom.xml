@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.cheney</groupId>
+  <artifactId>abing</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>abing</name>
+  <description>个人小网站</description>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.10.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.7</java.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>  
+      <groupId>org.springframework.boot</groupId>  
+      <artifactId>spring-boot-starter-test</artifactId>  
+      <scope>test</scope>  
+    </dependency>
+
+    <dependency>  
+      <groupId>org.springframework.boot</groupId>  
+      <artifactId>spring-boot-starter-data-mongodb</artifactId>  
+    </dependency> 
+
+    <!-- 添加热部署 devtools：监听文件变动 -->  
+    <!-- 当Java文件改动时，Spring-boo会快速重新启动 -->  
+    <!-- 最简单的测试，就是随便找一个文件Ctrl+S一下，就可以看到效果 --> 
+    <!-- 
+    <dependency>  
+      <groupId>org.springframework.boot</groupId>  
+      <artifactId>spring-boot-devtools</artifactId>  
+      optional=true,依赖不会传递 
+       本项目依赖devtools；若依赖本项目的其他项目想要使用devtools，需要重新引入
+      <optional>true</optional>  
+    </dependency>
+     --> 
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <!-- mybatis generator 自动生成代码插件
+      <plugin>
+        <groupId>org.mybatis.generator</groupId>
+        <artifactId>mybatis-generator-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <configuration>
+          <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+          <overwrite>true</overwrite>
+          <verbose>true</verbose>
+        </configuration>
+      </plugin>
+      -->
+    </plugins>
+  </build>
+</project>
